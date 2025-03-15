@@ -1,24 +1,22 @@
 import globals from 'globals';
 import pluginJs from '@eslint/js';
+import stylistic from '@stylistic/eslint-plugin';
 
 export default [
+  stylistic.configs.recommended,
+  pluginJs.configs.recommended,
   {
     files: ['**/*.js'],
-    languageOptions: {
-      sourceType: 'module',
-      globals: {
-        ...globals.browser,
-        ...globals.node,
-      },
-    },
-    parserOptions: {
-      sourceType: 'module',
-    },
+  },
+  {
+    ignores: ['dist/'],
   },
   {
     languageOptions: {
-      globals: globals.browser,
+      globals: globals.node,
+      parserOptions: {
+        sourceType: 'module',
+      },
     },
   },
-  pluginJs.configs.recommended,
 ];
