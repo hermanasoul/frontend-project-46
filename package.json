@@ -4,7 +4,9 @@
   "description": "[![Actions Status](https://github.com/hermanasoul/frontend-project-46/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/hermanasoul/frontend-project-46/actions)",
   "main": "gendiff.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint -c .eslintrc.js .",
+    "start": "node gendiff.js"
   },
   "repository": {
     "type": "git",
@@ -26,8 +28,10 @@
     "gendiff": "./gendiff.js"
   },
   "devDependencies": {
-    "eslint": "^8.2.0",
+    "@eslint/js": "^9.22.0",
+    "eslint": "^8.57.1",
     "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.31.0"
+    "eslint-plugin-import": "^2.31.0",
+    "globals": "^16.0.0"
   }
 }
