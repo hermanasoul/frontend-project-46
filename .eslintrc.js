@@ -1,7 +1,6 @@
 import globals from 'globals';
 import pluginJs from '@eslint/js';
 
-/** @type {import('eslint').Linter.Config[]} */
 export default [
   {
     files: ['**/*.js'],
@@ -11,6 +10,9 @@ export default [
         ...globals.browser,
         ...globals.node,
       },
+    },
+    parserOptions: {
+      sourceType: 'module',
     },
   },
   {
