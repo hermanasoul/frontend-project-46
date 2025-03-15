@@ -1,11 +1,13 @@
 #!/usr/bin/env node
 
-const { program } = require('commander');
+const { Command } = require('commander');
+const program = new Command();
 
 program
-  .description('Compares two configuration files and shows a difference.')
   .version('1.0.0')
-  .option('-V, --version', 'output the version number')
+  .description('Compares two configuration files and shows a difference.')
   .option('-h, --help', 'display help for command')
-
-program.parse(process.argv);
+  .action(() => {
+    console.log('Help message will be displayed here.'); // л
+  })
+  .parse(process.argv);
