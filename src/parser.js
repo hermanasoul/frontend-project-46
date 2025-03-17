@@ -7,7 +7,7 @@ const parseFile = (filepath) => {
     const data = fs.readFileSync(absolutePath, 'utf-8')
     return JSON.parse(data)
   }
-  catch (error) {
+  catch {
     console.error(`Error reading or parsing file: ${filepath}`)
     process.exit(1)
   }
