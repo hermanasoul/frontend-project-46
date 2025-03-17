@@ -12,4 +12,12 @@ const parseFile = (filepath) => {
   }
 };
 
-module.exports = parseFile;
+const parse = (file1, file2) => {
+  const obj1 = parseFile(file1);
+  const obj2 = parseFile(file2);
+
+  const isIdentical = JSON.stringify(obj1) === JSON.stringify(obj2);
+  return isIdentical ? 'The files are identical.' : 'Differences found.';
+};
+
+module.exports = { parse };
