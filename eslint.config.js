@@ -1,6 +1,6 @@
-import globals from 'globals';
-import pluginJs from '@eslint/js';
-import stylistic from '@stylistic/eslint-plugin';
+import globals from 'globals'
+import pluginJs from '@eslint/js'
+import stylistic from '@stylistic/eslint-plugin'
 
 export default [
   stylistic.configs.recommended,
@@ -19,4 +19,4 @@ export default [
       },
     },
   },
-];
+]
