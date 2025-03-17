@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-const { Command } = require('commander');
-const _ = require('lodash');
-const { parseFile } = require('./src/parser');
+import { Command } from 'commander';
+import _ from 'lodash';
+import { parseFile } from './src/parser.js';
 
 const genDiff = (filepath1, filepath2) => {
   const file1Data = parseFile(filepath1);

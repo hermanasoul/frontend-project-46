@@ -1,9 +1,8 @@
-const fs = require('fs');
-const path = require('path');
-const yaml = require('js-yaml'); // Подключаем js-yaml
+import fs from 'fs';
+import path from 'path';
+import yaml from 'js-yaml';
 
-// Функция для парсинга файлов
-const parseFile = (filepath) => {
+export const parseFile = (filepath) => {
   const absolutePath = path.resolve(process.cwd(), filepath);
   try {
     const fileExtension = path.extname(filepath).toLowerCase();
@@ -23,5 +22,3 @@ const parseFile = (filepath) => {
     process.exit(1);
   }
 };
-
-module.exports = { parseFile };
