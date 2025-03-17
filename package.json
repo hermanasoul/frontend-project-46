@@ -16,7 +16,7 @@
     "test:watch": "vitest --coverage",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
-    "coverage": "npm run test -- --coverage"
+    "coverage": "npm run test"
   },
   "repository": {
     "type": "git",
