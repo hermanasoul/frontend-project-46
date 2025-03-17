@@ -36,13 +36,13 @@
     "*.js": "eslint --fix"
   },
   "devDependencies": {
-    "@stylistic/eslint-plugin": "^4.1.0",
     "@eslint/eslintrc": "^3.3.0",
     "@eslint/js": "^9.21.0",
+    "@stylistic/eslint-plugin": "^4.1.0",
     "eslint": "^9.21.0",
     "eslint-plugin-import": "^2.31.0",
     "globals": "^16.0.0",
-    "vitest": "^3.0.7",
-    "simple-git-hooks": "^2.11.1"
+    "simple-git-hooks": "^2.11.1",
+    "vitest": "^3.0.9"
   }
 }
