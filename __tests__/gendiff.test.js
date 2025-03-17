@@ -4,8 +4,8 @@ import { execSync } from 'child_process';
 describe('gendiff CLI with YAML files', () => {
   it('should generate correct diff between two YAML files', () => {
 
-    const file1 = './test/fixtures/file1.yml';
-    const file2 = './test/fixtures/file2.yml';
+    const file1 = './__tests__/__fixtures__/file1.yml';
+    const file2 = './__tests__/__fixtures__/file2.yml';
 
     const result = execSync(`node ./gendiff.js ${file1} ${file2}`).toString();
     
