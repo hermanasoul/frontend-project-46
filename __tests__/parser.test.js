@@ -1,21 +1,38 @@
-import { describe, test, expect } from 'vitest'
-import { parse } from '../src/parser.js'
-/* import fs from 'fs' */
+import { describe, it, expect } from 'vitest';
+import { parseFile } from '../src/parser.js';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
-const getFixturePath = filename => `${process.cwd()}/${filename}`
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-describe('parse', () => {
-  test('correctly compares identical flat JSON files', () => {
-    const file1 = getFixturePath('file1.json')
-    const file2 = getFixturePath('file1.json')
+const getFixturePath = (filename) => path.join(__dirname, '__fixtures__', filename);
 
-    expect(parse(file1, file2)).toBe('The files are identical.')
-  })
+describe('parseFile', () => {
+  it('should parse JSON file', () => {
+    const filepath = getFixturePath('file1.json');
+    const result = parseFile(filepath);
+    expect(result).toEqual({
+      host: 'hexlet.io',
+      timeout: 50,
+      proxy: '123.234.53.22',
+      follow: false,
+    });
+  });
 
-  test('correctly compares different flat JSON files', () => {
-    const file1 = getFixturePath('file1.json')
-    const file2 = getFixturePath('file2.json')
+  it('should parse YAML file', () => {
+    const filepath = getFixturePath('file1.yaml');
+    const result = parseFile(filepath);
+    expect(result).toEqual({
+      host: 'hexlet.io',
+      timeout: 50,
+      proxy: '123.234.53.22',
+      follow: false,
+    });
+  });
 
-    expect(parse(file1, file2)).toBe('Differences found.')
-  })
-})
+  it('should throw error for unsupported format', () => {
+    const filepath = getFixturePath('unsupported.txt');
+    expect(() => parseFile(filepath)).toThrow('Unsupported file format: .txt');
+  });
+});
