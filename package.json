@@ -2,6 +2,7 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "description": "Difference calculator",
+  "main": "src/index.js",
   "bin": {
     "gendiff": "./gendiff.js"
   },

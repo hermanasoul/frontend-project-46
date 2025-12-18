@@ -8,7 +8,7 @@ const __dirname = path.dirname(__filename)
 
 const getFixturePath = filename => path.join(__dirname, '__fixtures__', filename)
 
-const runCLI = args => {
+const runCLI = (args) => {
   const command = `node ./gendiff.js ${args}`
   return execSync(command).toString().trim()
 }
@@ -61,7 +61,7 @@ describe('CLI with json format', () => {
     const file1 = getFixturePath('flat1.json')
     const file2 = getFixturePath('flat2.json')
     const output = runCLI(`${file1} ${file2} --format json`)
-    
+
     const parsed = JSON.parse(output)
     expect(Array.isArray(parsed)).toBe(true)
   })
@@ -70,7 +70,7 @@ describe('CLI with json format', () => {
     const file1 = getFixturePath('flat1.json')
     const file2 = getFixturePath('flat2.json')
     const output = runCLI(`${file1} ${file2} -f json`)
-    
+
     const parsed = JSON.parse(output)
     expect(Array.isArray(parsed)).toBe(true)
   })
