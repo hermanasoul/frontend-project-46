@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 const stringify = (value, depth) => {
   if (!_.isObject(value)) {
     return String(value);
