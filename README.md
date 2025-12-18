@@ -3,6 +3,7 @@
 
 ## Example of work
 [Link to Ascii.nu example](https://asciinema.org/a/9gKmyzBO4TY9gV6KIPmyfBKDJ)
+[Link to Ascii.nu example](https://asciinema.org/a/EqNoCpYZy3GiyofN3QWYRoKlQ)
 
 [![CI](https://github.com/hermanasoul/frontend-project-46/actions/workflows/ci.yml/badge.svg)](https://github.com/hermanasoul/frontend-project-46/actions/workflows/ci.yml)
 
