@@ -37,7 +37,7 @@ const formatPlain = (diff, path = '') => {
         return []
 
       default:
-        throw new Error(`Unknown node type: ${node.type}`)
+        return [] // Изменено: вместо throw возвращаем пустой массив
     }
   })
 

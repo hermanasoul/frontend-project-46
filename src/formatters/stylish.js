@@ -26,15 +26,15 @@ const formatStylish = (diff, depth = 1) => {
 
     switch (type) {
       case 'added':
-        return `${indent}+ ${key}: ${stringify(node.value, depth)}` // depth, а не depth + 1
+        return `${indent}+ ${key}: ${stringify(node.value, depth + 1)}`
       case 'removed':
-        return `${indent}- ${key}: ${stringify(node.value, depth)}` // depth, а не depth + 1
+        return `${indent}- ${key}: ${stringify(node.value, depth + 1)}`
       case 'unchanged':
-        return `${indent}  ${key}: ${stringify(node.value, depth)}` // depth, а не depth + 1
+        return `${indent}  ${key}: ${stringify(node.value, depth + 1)}`
       case 'changed':
         return [
-          `${indent}- ${key}: ${stringify(node.value1, depth)}`, // depth, а не depth + 1
-          `${indent}+ ${key}: ${stringify(node.value2, depth)}`, // depth, а не depth + 1
+          `${indent}- ${key}: ${stringify(node.value1, depth + 1)}`,
+          `${indent}+ ${key}: ${stringify(node.value2, depth + 1)}`,
         ]
       case 'nested':
         return `${indent}  ${key}: ${formatStylish(node.children, depth + 1)}`
