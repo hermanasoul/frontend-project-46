@@ -1,26 +1,24 @@
 import _ from 'lodash'
 
 const stringify = (value, depth) => {
-  const indent = '            ' // Фиксированные 12 пробелов для всех ключей внутри объектов
-  const bracketIndent = '            ' // Закрывающая } на том же уровне, что и ключи
-
+  const indent = ' '.repeat(depth * 4)  // Отступ для ключей: глубина * 4 пробела
+  const bracketIndent = ' '.repeat(depth * 4)  // Отступ для закрывающей скобки: равен отступу для ключей
   if (!_.isObject(value) || value === null) {
     if (value === '') return ''
     if (value === null) return 'null'
     return String(value)
   }
-
   const lines = Object.entries(value).map(([key, val]) => {
-    return `${indent}${key}: ${stringify(val, depth + 1)}` // Нет лишних пробелов
+    // Формируем строку для каждого ключа без лишних пробелов (только indent)
+    return `${indent}${key}: ${stringify(val, depth + 1)}`
   })
-
   return `{\n${lines.join('\n')}\n${bracketIndent}}`
 }
 
 const formatStylish = (diff, depth = 1) => {
   const indent = ' '.repeat(depth * 4 - 2)
   const bracketIndent = ' '.repeat((depth - 1) * 4)
-
+  // Остальная часть функции без изменений
   const lines = diff.map((node) => {
     const { key, type } = node
     switch (type) {
@@ -41,7 +39,6 @@ const formatStylish = (diff, depth = 1) => {
         throw new Error(`Unknown node type: ${type}`)
     }
   })
-
   return `{\n${lines.flat().join('\n')}\n${bracketIndent}}`
 }
 
