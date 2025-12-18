@@ -50,7 +50,7 @@ jobs:
       - name: Generate coverage report
         run: npm run test -- --coverage
       - name: Upload coverage to CodeClimate
-        uses: codeclimate/test-reporter@v0.10.10
+        uses: codeclimate/test-reporter@v0.10.12
         with:
           coverage_locator: coverage/lcov.info
         env:
