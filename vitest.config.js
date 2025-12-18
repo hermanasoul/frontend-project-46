@@ -9,7 +9,7 @@ export default defineConfig({
         'gendiff.js',
         '__tests__/**',
         '**/*.config.js',
-      ]
+      ],
     },
   },
 })
